@@ -1,6 +1,6 @@
 // Modules
 const express =  require('express');
-const api_helper = require('./api.js')
+const api_helper = require('../api.js')
 const publicIp = require('public-ip');
 
 // Initializations
