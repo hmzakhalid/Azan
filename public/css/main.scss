@@ -1,0 +1,269 @@
+html {
+    font-size: 62.5%;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Gilroy';
+}
+
+// h1 {
+//     font-weight: bold;
+//     font-size: 8rem;
+// }
+
+
+ul {
+    display: flex;
+    flex-direction: column;
+    color: white;
+
+    #Fajr {
+        background-image: url(../images/sunrise.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    #Dhuhr {
+        background-image: url(../images/noon.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    #Asr {
+        background-image: url(../images/asr.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    #Maghrib {
+        background-image: url(../images/sunset.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    #Isha {
+        background-image: url(../images/isha.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+}
+
+li {
+    height: 20vh;
+    list-style: none;
+    font-size: 4rem;
+    display: grid;
+    text-align: left;
+    padding-left: 12rem;
+    
+    
+}
+
+span{
+    align-self: center;
+    width: fit-content;
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0),  rgba(0, 0, 0, 0.4));
+    padding: 2rem;
+}
+
+
+@media only screen and (max-width: 2561px) {
+    #Fajr {
+        background-position-y: -84rem;
+    }
+    #Dhuhr {
+        background-position-y: -27rem;
+    }
+    #Asr {
+        background-position-y: 22rem;
+    }
+    #Maghrib {
+        background-position-y: 10rem;
+    }
+    #Isha {
+        background-position-y: 55rem;
+    }
+  }
+
+  @media only screen and (max-width: 1921px) {
+    #Fajr {
+        background-position-y: -50rem;
+    }
+    #Dhuhr {
+        background-position-y: -15rem;
+    }
+    #Asr {
+        background-position-y: 14rem;
+    }
+    #Maghrib {
+        background-position-y: 6rem;
+    }
+    #Isha {
+        background-position-y: 33rem;
+    }
+  }
+
+  @media only screen and (max-width: 1441px) {
+    #Fajr {
+        background-position-y: -50rem;
+    }
+    #Dhuhr {
+        background-position-y: -15rem;
+    }
+    #Asr {
+        background-position-y: 12rem;
+    }
+    #Maghrib {
+        background-position-y: 3rem;
+    }
+    #Isha {
+        background-position-y: 29rem;
+    }
+  }
+
+  @media only screen and (max-width: 1025px) {
+    #Fajr {
+        background-position-y: -38rem;
+    }
+    #Dhuhr {
+        background-position-y: -9rem;
+    }
+    #Asr {
+        background-position-y: 15rem;
+    }
+    #Maghrib {
+        background-position-y: 10rem;
+    }
+    #Isha {
+        background-position-y: 34rem;
+    }
+  }
+
+  @media only screen and (max-width: 769px) {
+    #Fajr {
+        background-position-y: -38rem;
+    }
+    #Dhuhr {
+        background-position-y: -9rem;
+    }
+    #Asr {
+        background-position-y: 15rem;
+    }
+    #Maghrib {
+        background-position-y: 10rem;
+    }
+    #Isha {
+        background-position-y: 34rem;
+        background-position-x: -18rem;
+    }
+  }
+
+  @media only screen and (max-width: 426px) {
+    li {
+        padding-left: 0;
+    }
+    #Fajr {
+        background-position-y: -38rem;
+        background-position-x: -26rem;
+    }
+    #Dhuhr {
+        background-position-y: -9rem;
+        background-position-x: -14rem;
+    }
+    #Asr {
+        background-position-y: 15rem;
+        background-position-x: -10rem;
+    }
+    #Maghrib {
+        background-position-y: 10rem;
+        background-position-x: -28rem;
+    }
+    #Isha {
+        background-position-y: 43rem;
+        background-position-x: -72rem;
+    }
+  }
+
+  @media only screen and (max-width: 415px) {
+    li {
+        padding-left: 0;
+    }
+    #Fajr {
+        background-position-y: -38rem;
+        background-position-x: -26rem;
+    }
+    #Dhuhr {
+        background-position-y: -9rem;
+        background-position-x: -14rem;
+    }
+    #Asr {
+        background-position-y: 15rem;
+        background-position-x: -10rem;
+    }
+    #Maghrib {
+        background-position-y: 10rem;
+        background-position-x: -28rem;
+    }
+    #Isha {
+        background-position-y: 43rem;
+        background-position-x: -72rem;
+    }
+  }
+
+  @media only screen and (max-width: 376px) {
+    li {
+        padding-left: 0;
+        font-size: 2.5rem;
+    }
+    #Fajr {
+        background-position-y: -38rem;
+        background-position-x: -34rem;
+    }
+    #Dhuhr {
+        background-position-y: -9rem;
+        background-position-x: -21rem;
+    }
+    #Asr {
+        background-position-y: 15rem;
+        background-position-x: -20rem;
+    }
+    #Maghrib {
+        background-position-y: 10rem;
+        background-position-x: -38rem;
+    }
+    #Isha {
+        background-position-y: 34rem;
+        background-position-x: -58rem;
+    }
+  }
+
+  @media only screen and (max-width: 321px) {
+    li {
+        padding-left: 0;
+        font-size: 2.5rem;
+    }
+    #Fajr {
+        background-position-y: -38rem;
+        background-position-x: -34rem;
+    }
+    #Dhuhr {
+        background-position-y: -9rem;
+        background-position-x: -21rem;
+    }
+    #Asr {
+        background-position-y: 15rem;
+        background-position-x: -20rem;
+    }
+    #Maghrib {
+        background-position-y: 10rem;
+        background-position-x: -38rem;
+    }
+    #Isha {
+        background-position-y: 34rem;
+        background-position-x: -58rem;
+    }
+  }

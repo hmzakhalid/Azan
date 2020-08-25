@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azan | Daily Prayer Timings</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <main>
+        <section>
+            <div class="container">
+                <!-- <h1>Prayer Timings in <%= city %>, <%= countryCode %></h1> -->
+
+                <ul>
+                    <li id="Fajr"> <span><b>Fajr:</b> <%= prayer.Fajr %> AM</span> </li>
+                    <li id="Dhuhr"> <span><b>Dhuhr:</b> <%= prayer.Dhuhr %> PM</span> </li>
+                    <li id="Asr"> <span><b>Asr:</b> <%= prayer.Asr %> PM</span> </li>
+                    <li id="Maghrib"> <span><b>Maghrib:</b> <%= prayer.Maghrib %> PM</span> </li>
+                    <li id="Isha"> <span><b>Isha:</b> <%= prayer.Isha  %> PM</span> </li>            
+                </ul>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
