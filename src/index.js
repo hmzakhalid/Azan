@@ -19,7 +19,6 @@ let city= '';
 let countryCode = '';
 
 app.get('/', (req, res) => {
-    
     (async () => {
         ip = await publicIp.v4();
     })();
