@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
         ip = await publicIp.v4();
     })();
 
-    let Location = `http://api.ipstack.com/${ip}?access_key=f7353db8fe71f3722470dcdc9049b516`;
+    let Location = `http://api.ipstack.com/${ip}?access_key=YOUR_ACCESS_KEY`;
 
     api_helper.make_API_call(Location)
     .then(response => {
