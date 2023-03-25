@@ -1,5 +1,6 @@
 ---
 import { Image } from "@astrojs/image/components";
+import Layout from "../layouts/Layout.astro";
 import "../assets/css/main.css";
 import fajr from "../assets/images/fajr.jpg";
 import dhuhr from "../assets/images/dhuhr.jpg";
@@ -11,69 +12,85 @@ import isha from "../assets/images/isha.jpg";
 const convertToAMPM = (time) => {
   const [hours, minutes] = time.split(":").map(Number);
   const period = hours >= 12 ? "PM" : "AM";
-  const convertedHours = ((hours % 12) || 12).toString().padStart(2, "0");
+  const convertedHours = (hours % 12 || 12).toString().padStart(2, "0");
   return `${convertedHours}:${minutes.toString().padStart(2, "0")} ${period}`;
 };
 
-
 try {
   // Get user location (country and city) from IP address
-  const { ip } = await fetch("https://api.ipify.org?format=json").then(res => res.json());
-  const { country_name: country, city } = await fetch(`https://ipapi.co/${ip}/json/`).then(res => res.json());
+  const { ip } = await fetch("https://api.ipify.org?format=json").then((res) =>
+    res.json()
+  );
+  const { country_name: country, city } = await fetch(
+    `https://ipapi.co/${ip}/json/`
+  ).then((res) => res.json());
 
   // Get prayer times for today in the user's city and country
-  const date = new Date().toLocaleDateString("en-GB", {day: "2-digit", month: "2-digit", year: "numeric"}).replace(/\//g, "-"); // DD-MM-YYYY format
-  const { data: { timings } } = await fetch(`http://api.aladhan.com/v1/timingsByCity/${date}?city=${city}&country=${country}&method=2`).then(res => res.json());
+  const date = new Date()
+    .toLocaleDateString("en-GB", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    })
+    .replace(/\//g, "-"); // DD-MM-YYYY format
+  const {
+    data: { timings },
+  } = await fetch(
+    `http://api.aladhan.com/v1/timingsByCity/${date}?city=${city}&country=${country}&method=2`
+  ).then((res) => res.json());
 
   // Convert timings to 12-hour AM/PM format
   var convertedTimings = Object.fromEntries(
-    Object.entries(timings).map(([key, value]) => [key.toLowerCase(), convertToAMPM(value)])
+    Object.entries(timings).map(([key, value]) => [
+      key.toLowerCase(),
+      convertToAMPM(value),
+    ])
   );
-  console.log(convertedTimings);
 } catch (error) {
   console.error("An error occurred:", error);
 }
-
 ---
 
-<main>
-  <div class="container">
-    <ul>
-      <li id="Fajr">
-        <Image src={fajr} alt="Fajr" />
-        <span>
-          <b>Fajr:</b>
-          {convertedTimings.fajr || "Loading..."}
-        </span>
-      </li>
-      <li id="Dhuhr">
-        <Image src={dhuhr} alt="Dhuhr" />
-        <span>
-          <b>Dhuhr:</b>
-          {convertedTimings.dhuhr || "Loading..."}
-        </span>
-      </li>
-      <li id="Asr">
-		<Image src={asr} alt="Asr" />
-        <span>
-          <b>Asr:</b>
-          {convertedTimings.asr || "Loading..."}
-        </span>
-      </li>
-      <li id="Maghrib">
-		<Image src={maghrib} alt="Maghrib" />
-        <span>
-          <b>Maghrib:</b>
-          {convertedTimings.maghrib || "Loading..."}
-        </span>
-      </li>
-      <li id="Isha">
-		<Image src={isha} alt="Isha" />
-        <span>
-          <b>Isha:</b>
-          {convertedTimings.isha || "Loading..."}
-        </span>
-      </li>
-    </ul>
-  </div>
-</main>
+<Layout title="Azan | Prayer Times">
+  <main>
+    <div class="container">
+      <ul>
+        <li id="Fajr">
+          <Image src={fajr} alt="Fajr" />
+          <span>
+            <b>Fajr:</b>
+            {convertedTimings.fajr || "Loading..."}
+          </span>
+        </li>
+        <li id="Dhuhr">
+          <Image src={dhuhr} alt="Dhuhr" />
+          <span>
+            <b>Dhuhr:</b>
+            {convertedTimings.dhuhr || "Loading..."}
+          </span>
+        </li>
+        <li id="Asr">
+          <Image src={asr} alt="Asr" />
+          <span>
+            <b>Asr:</b>
+            {convertedTimings.asr || "Loading..."}
+          </span>
+        </li>
+        <li id="Maghrib">
+          <Image src={maghrib} alt="Maghrib" />
+          <span>
+            <b>Maghrib:</b>
+            {convertedTimings.maghrib || "Loading..."}
+          </span>
+        </li>
+        <li id="Isha">
+          <Image src={isha} alt="Isha" />
+          <span>
+            <b>Isha:</b>
+            {convertedTimings.isha || "Loading..."}
+          </span>
+        </li>
+      </ul>
+    </div>
+  </main>
+</Layout>
