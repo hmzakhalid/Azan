@@ -1,0 +1,125 @@
+html {
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Gilroy';
+}
+
+ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: white;
+}
+
+li {
+  height: 20vh;
+  list-style: none;
+  font-size: 4rem;
+  display: -ms-grid;
+  display: grid;
+  text-align: left;
+  padding-left: 12rem;
+  position: relative;
+}
+
+span {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.4)));
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+  padding: 2rem;
+  position: relative;
+  z-index: 20;
+}
+
+#Fajr img {
+  position: absolute;
+  height: 20vh;
+  object-fit: cover;
+  width: 100vw;
+  object-position: 0% 68%;
+  z-index: 10;
+}
+
+
+#Dhuhr img {
+  position: absolute;
+  height: 20vh;
+  object-fit: cover;
+  width: 100vw;
+  object-position: 0% 42%;
+  z-index: 10;
+}
+
+
+#Asr img {
+  position: absolute;
+  height: 20vh;
+  object-fit: cover;
+  width: 100vw;
+  object-position: 0% 22%;
+  z-index: 10;
+}
+
+#Maghrib img {
+  position: absolute;
+  height: 20vh;
+  object-fit: cover;
+  width: 100vw;
+  object-position: 0% 55%;
+  z-index: 10;
+}
+
+
+#Isha img {
+  position: absolute;
+  height: 20vh;
+  object-fit: cover;
+  width: 100vw;
+  object-position: 0% 36%;
+  z-index: 10;
+}
+
+
+
+@media only screen and (max-width: 426px) {
+  li {
+    padding-left: 0;
+  }
+}
+
+@media only screen and (max-width: 415px) {
+  li {
+    padding-left: 0;
+  }
+}
+
+@media only screen and (max-width: 376px) {
+  li {
+    padding-left: 0;
+    font-size: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 321px) {
+  li {
+    padding-left: 0;
+    font-size: 2.5rem;
+  }
+}
+/*# sourceMappingURL=main.css.map */
